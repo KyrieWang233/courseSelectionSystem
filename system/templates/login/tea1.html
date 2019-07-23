@@ -1,0 +1,72 @@
+<meta charset="utf-8">
+{% extends 'base_tea.html' %}
+{% block title %}开设课程
+{% endblock %}
+{% block content %}
+    <style type="text/css">
+    body{
+        background:url("../../../static/img/001.jpg")no-repeat center center fixed;
+        background-size:100%;
+    }
+    .div1{
+        height:260px;
+        width: 350px;
+        margin-left: 400px;
+        {#margin-right: 20px;#}
+        margin-top: 100px;
+        margin-bottom:100px ;
+        background-color: gainsboro;
+        opacity:0.7;
+        filter:alpha(opacity=70);
+        padding-top: 10px;
+        padding-left: 60px;
+        border-radius: 30px;
+    }
+
+    .input1{
+        width:200px;
+        height: 30px;
+        border-style:solid;
+        border-top: 0px;
+        border-left: 0px;
+        border-right: 0px;
+        background-color: gainsboro;
+        opacity:0.7;
+        filter:alpha(opacity=70);
+    }
+    .input02{
+        border-radius: 30px;
+        height: 30px;
+        width: 80px;
+        border-color: black;
+        margin-left: 200px;
+    }
+    .select01{
+         border-radius: 30px;
+        border-color: dimgray;
+        height: 28px;
+        width: 110px;
+        border-width:2px;
+    }
+    h2{
+        margin-left: 80px;
+    }
+</style>
+
+    <div class="div1">
+    <form>
+                {% csrf_token %}
+<h2>课程信息</h2>
+    课程名称:<input class="input1"name="courseName"><br><br>
+
+    课程学分:<input class="input1"name="courseCredit"><br><br>
+
+    {#  授课教师:<input class="input1"name="teacherName"><br><br>#}
+
+
+ <input class="input02" type="submit"  value="确认" onclick="alert('开设课程成功！')"formaction="/tea1/"formmethod="post">
+        <input class="input02" type="submit"  value="返回上一级"formaction="/index_t/"formmethod="get">
+
+    </form>
+</div>
+{% endblock %}

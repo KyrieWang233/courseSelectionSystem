@@ -1,0 +1,15 @@
+<meta charset="utf-8">
+{% extends 'base_adm.html' %}
+{% block title %}主页{% endblock %}
+{% block content %}
+    <style>
+    body{
+        background:url("../../../static/img/010.jpg")no-repeat center center fixed;
+        background-size:100%;
+    }
+    </style>
+    {% if request.session.is_login %}
+    {# <h1>你好,{{ request.session.user_name }}管理员！欢迎回来！</h1> #}
+    {% else %}    <h1>你尚未登录，只能访问公开内容！</h1>
+    {% endif %}
+{% endblock %}
